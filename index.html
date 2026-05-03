@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="weather-panel">
+            <div class="search-row">
+                <form id="weatherForm" class="search-form">
+                    <label class="sr-only" for="cityInput">City name</label>
+                    <input id="cityInput" type="search" name="city" placeholder="Search city" autocomplete="address-level2" required>
+                    <button type="submit" aria-label="Search weather">
+                        <span>Search</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="status" class="status" role="status"></div>
+
+            <section id="currentWeather" class="current-weather is-hidden" aria-live="polite">
+                <div>
+                    <p id="location" class="location"></p>
+                    <p id="condition" class="condition"></p>
+                    <p id="updatedAt" class="updated"></p>
+                </div>
+                <div class="temperature-block">
+                    <img id="weatherIcon" alt="" width="92" height="92">
+                    <p><span id="temperature">--</span><sup>&deg;C</sup></p>
+                </div>
+            </section>
+
+            <section id="metrics" class="metrics is-hidden" aria-label="Weather details">
+                <article>
+                    <span>Feels like</span>
+                    <strong id="feelsLike">--&deg;C</strong>
+                </article>
+                <article>
+                    <span>Humidity</span>
+                    <strong id="humidity">--%</strong>
+                </article>
+                <article>
+                    <span>Wind</span>
+                    <strong id="wind">-- m/s</strong>
+                </article>
+            </section>
+        </section>
+
+        <section class="forecast-panel">
+            <div class="section-heading">
+                <h1>Weather</h1>
+                <p>Current conditions and a quick forecast powered by OpenWeatherMap.</p>
+            </div>
+            <div id="forecast" class="forecast-list" aria-label="Forecast"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
